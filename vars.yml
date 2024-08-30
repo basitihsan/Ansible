@@ -1,0 +1,10 @@
+--- # How to efine varibales and use it for the rest :
+  - hosts: demo
+    user: ansible
+    become: yes
+    connection: ssh
+    vars:
+            pckgname: tree
+    tasks:
+                    - name: install TREE server on centos 7
+                      action: yum name='{{pckgname}}' state=installed
